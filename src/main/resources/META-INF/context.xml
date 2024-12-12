@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+	<Resource auth="Container"
+		driverClassName="com.mysql.cj.jdbc.Driver"
+		factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
+		maxActive="100"
+		minIdle="10"
+        maxIdle="100"
+		maxWait="20000"
+		initialSize="10"
+		size="200"
+		global="jdbc/MunfulettoDB"
+		name="jdbc/MunfulettoDB"
+		encrypt="true"
+		trustServerCertificate="false"
+		username="root"
+		password="ilenia munfuletto"
+		type="javax.sql.DataSource"
+		url="jdbc:mysql://localhost:3306/MunfulettoDB?useLegacyDatetimeCode=false&amp;serverTimezone=Europe/Rome"
+		testOnBorrow="true"
+		testOnReturn = "false"
+		validationQuery="SELECT 1"
+		validationInterval="30000"
+		minEvictableIdleTimeMillis="30000"
+		removeAbandoned="true"
+		removeAbandonedOnBorrow = "true"
+		removeAbandonedTimeout="10"
+	/>
+</Context>
+
+

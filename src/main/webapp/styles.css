@@ -1,0 +1,462 @@
+/* Import dei font */
+
+@font-face {
+    font-family: 'Accidental Presidency';
+    src: url("./resources/fonts/accid___.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'Pacifico';
+    src: url("./resources/fonts/Pacifico.ttf") format("truetype");
+}
+
+/* Regole globali */
+
+* {
+    --bs-warning-rgb: 236, 160, 29!important;
+    --bs-dark-rgb: 28,28,24!important;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Accidental Presidency';
+}
+
+body {
+    font-size: 1.4em;
+    overscroll-behavior: none;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2.4em;
+}
+
+h3 {
+    font-size: 2em;
+}
+
+p, .lead {
+    font-size: 1.5em;
+}
+
+
+/* Regole Navbar */
+
+header {
+    z-index: 10000;
+    max-height: 96px;
+    height: 96px;
+}
+
+header a:hover{
+    text-decoration: underline;
+}
+
+/* Regole Footer */
+
+footer {
+    width: 100%;
+    background-color: #f5f5f5;
+    padding: 1rem;
+    position: absolute;
+    bottom: 0px;
+}
+
+/* Regole index.jsp */
+
+#main-body {
+    height: 200vh;
+}
+
+#heroIndex, #heroMenu{
+    position: relative;
+    top: 5%;
+}
+
+#heroMenu {
+    height: 100%;
+}
+
+#logoName {
+    font-family: 'Pacifico';
+    font-size: 28px;
+    text-decoration: underline;
+}
+
+.lead a {
+    font-size: 1em;
+}
+
+#indexMain {
+    background-image: url("resources/images/cover.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+
+#indexMain>div{
+    align-self: end;
+    width: 80%;
+    text-align: center;
+}
+
+#menu {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+
+#menu>div {    
+    margin-inline: auto;
+    background-image: url("resources/images/menu.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:contain;
+    height: 95%;
+    aspect-ratio: 16/9;
+    margin-top: 2%;
+}
+
+#subscribeFormContainer, #loginFormContainer {
+    position: absolute;
+    right: 1em;
+    top: 125px;
+    width: 300px;
+}
+
+#subscribeFormContainer.hidden, #loginFormContainer.hidden {
+    display: none;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+#subscribeFormContainer.show, #loginFormContainer.show {
+    display: block;
+    opacity: 1;
+    transition: all 0.5s ease;
+}
+
+#main-body footer {
+    bottom: -117%;
+}
+
+/* Regole ordina.jsp */
+
+#order-body {
+    height: 100vh;
+}
+
+#ordine {
+    position: relative;
+    margin-top: 97px;
+}
+
+#order-body footer {
+    position: relative;
+    bottom: unset;
+}
+
+
+#selezioneProdotti, #infoSpedizione {
+    position: relative;
+    left: unset;
+    transition: left 0.5s ease;
+}
+
+#selezioneProdotti.hidden{
+    left: -200%;
+    transition: left 0.5s ease;
+}
+
+#infoSpedizione.hidden {
+    left: 200%;
+    transition: left 0.5s ease;
+}
+
+#selezioneProdotti>h1, #selezioneProdotti>h2, #infoSpedizione>h1, #infoSpedizione>h2, #infoPagamento>h1, #infoPagamento>h2, #infoNote>h1, #totale>h1{
+    font-family: 'Pacifico', serif;
+}
+
+.card-prodotto {
+    height: 400px;
+    max-height: 400px;
+    transition: transform 0.5s ease;
+}
+
+.card-prodotto.selected {
+    transform: scale(.95);
+    transition: transform 0.5s ease;
+}
+
+.card-prodotto img{
+    height: 60%;
+    max-height: 240px;
+    object-fit: contain;
+}
+
+.card-prodotto input[type=number], #infoSpedizione input, #infoPagamento input {
+    font-size: 1.4em;
+}
+
+.form-floating>.form-control:not(:placeholder-shown)~label {
+    transform: scale(.85) translateY(-1rem) translateX(.15rem);
+}
+
+.addProdBtn {
+    font-size: 1.3em;
+}
+
+#spanPrezzo {
+    color: white;
+    margin-right: 20px;
+    font-size: 30px;
+}
+
+
+/* Regole Modal.jsp */
+
+.modal-confirm {
+    color: #636363;
+    width: 325px;
+    font-size: 14px;
+}
+.modal-confirm .modal-content {
+    padding: 20px;
+    border-radius: 5px;
+    border: none;
+}
+.modal-confirm .modal-header {
+    border-bottom: none;
+    position: relative;
+}
+.modal-confirm h4 {
+    text-align: center;
+    font-size: 26px;
+    margin: 30px 0 -15px;
+}
+.modal-confirm .form-control, .modal-confirm .btn {
+    min-height: 40px;
+    border-radius: 3px;
+}
+.modal-confirm .close {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+}
+.modal-confirm .modal-footer {
+    border: none;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 13px;
+}
+.modal-confirm .icon-box {
+    color: #fff;
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: -70px;
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    z-index: 9;
+    background: #82ce34;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+.modal-confirm .icon-box i {
+    font-size: 58px;
+    position: relative;
+    top: -11px;
+    right: 4px;
+}
+.modal-confirm.modal-dialog {
+    margin-top: 80px;
+}
+.modal-confirm .btn {
+    color: #fff;
+    border-radius: 4px;
+    background: #82ce34;
+    text-decoration: none;
+    transition: all 0.4s;
+    line-height: normal;
+    border: none;
+}
+.modal-confirm .btn:hover, .modal-confirm .btn:focus {
+    background: #6fb32b;
+    outline: none;
+}
+
+.modal-content {
+    width: 350px;
+}
+
+.modal-confirm {
+    top: 80px;
+}
+
+
+/*Regole QR CODE */
+#qrCode>img {
+    position: relative;
+    right: -40px;
+}
+
+
+/*Regole View per tutti gli utenti*/
+
+#gestisci-ordini-body {
+    width: 100%;
+    background-color: #1c1c18;
+    padding-block: 1rem;
+}
+
+.card-container{
+    grid-template-columns: repeat(auto-fill, 27vw);
+    grid-gap: 2.5rem;
+    row-gap: 2rem;
+    justify-content: center;
+    width: 90%;
+    top: 140px;
+}
+
+.receipt {
+    width: 27vw;
+    height: 550px;
+    padding-block: 27px;
+    background-image: url("resources/images/bill.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: .5s ease;
+}
+
+.receipt:hover{
+    transform: scale(1.15);
+    transition: .5s ease;
+}
+
+.receipt>.receipt-container {
+    overflow-y: scroll;
+    height: 58%;
+    width: 90%;
+}
+
+.receipt table{
+    font-size: 1.5rem;
+    width: 80%;
+}
+
+table th, td {
+    padding: 1rem;
+}
+
+.receipt .row {
+    position: relative;
+    bottom: 10px;
+    padding-block: 1rem;
+}
+
+.receipt .row>p {
+    margin: 0;
+    padding: 0;
+}
+
+.row>p span {
+    text-decoration: underline;
+}
+
+button.change-status {
+    font-size: 1.3rem;
+}
+
+#gestisci-ordini-body footer {
+    width: 100%;
+    background-color: #f5f5f5;
+    padding: 1rem;
+    margin-top: 180px;
+    position: relative;
+    top:10px;
+}
+
+
+#gestisci-ordini-body h1{
+    position: relative;
+    top:20px;
+}
+
+#gestisci-ordini-body #statoOrdine{
+    position: relative;
+    bottom: 35px;
+}
+
+#noOrdini {
+    flex-direction: column;
+    position: relative;
+    top: 70px;
+    height: 100%;
+
+}
+
+.qr-container img {
+    position: relative;
+    left: 30%;
+    margin-bottom: 15px;
+}
+
+/*Regole Responsabile.jsp*/
+#statisticsContainer {
+    position: relative;
+    top: 110px;
+    height: 90%;
+}
+
+.statistic-name {
+    font-family: 'Pacifico', serif;
+}
+
+.graph-text {
+    font-size: 3rem;
+
+}
+
+.small-stats .statistic-name {
+    font-size: 2.5rem;
+}
+
+.small-stats .statistic-value {
+    font-size: 3.25rem;
+}
+
+.small-stats>div {
+    background-color: rgba(var(--bs-warning-rgb), 1);
+    transition: all 0.5s ease;
+}
+
+.small-stats>div:hover {
+    background-color: rgba(var(--bs-warning-rgb), 0.8);
+    transform: scale(1.03);
+    transition: all 0.5s ease;
+}
+
+#dashboard footer {
+    position: relative;
+    top: 60px;
+}
+
+
+
+
+
+
+
